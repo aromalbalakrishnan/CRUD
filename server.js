@@ -43,15 +43,15 @@ app.get("/products/:id", async(req, res) =>{
     }
 })
 
-const dummyData = { 
-    "productName": "pen1",
-    "quantity" : 10,
-    "price" : 12
-};
+// const dummyData = { 
+//     "productName": "pen1",
+//     "quantity" : 10,
+//     "price" : 12
+// };
 app.post("/products", async(req, res) =>{
     try {
-        // const product = await Product.create(req.body);
-        const product = dummyData;
+        const product = await Product.create(req.body);
+        // const product = dummyData;
         res.status(200).json(product)
     } catch (error) {
         console.log(error.message);
